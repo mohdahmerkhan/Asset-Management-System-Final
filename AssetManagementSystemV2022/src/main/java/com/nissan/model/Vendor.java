@@ -3,6 +3,7 @@ package com.nissan.model;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,7 +11,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
@@ -37,14 +41,21 @@ public class Vendor {
 	@JoinColumn(name ="assetTypeId" ,insertable=false,updatable=false)
 	@ManyToOne
 	private AssetType assetType;
+	
+	//For One Vendor Many AssetMaster
+	@JsonIgnore
+	@OneToMany(mappedBy = "asset", cascade = CascadeType.ALL)
+	private List<AssetMaster> assetMaster;
 
-	public Vendor() {
+	//Default Constructor
+	public Vendor()
+	{
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
+	//Parameterized Constructor
 	public Vendor(int vendorId, String vendorName, Date validFrom, Date validTo, String address, int vendortypeId,
-			int assetTypeId) {
+			int assetTypeId, VendorType vendorType, AssetType assetType, List<AssetMaster> assetMaster) {
 		super();
 		this.vendorId = vendorId;
 		this.vendorName = vendorName;
@@ -53,6 +64,19 @@ public class Vendor {
 		this.address = address;
 		this.vendortypeId = vendortypeId;
 		this.assetTypeId = assetTypeId;
+		this.vendorType = vendorType;
+		this.assetType = assetType;
+		this.assetMaster = assetMaster;
+	}
+
+
+	//Getters & Setters
+	public List<AssetMaster> getAssetMaster() {
+		return assetMaster;
+	}
+
+	public void setAssetMaster(List<AssetMaster> assetMaster) {
+		this.assetMaster = assetMaster;
 	}
 
 	public int getVendorId() {
@@ -129,12 +153,10 @@ public class Vendor {
 
 	@Override
 	public String toString() {
-		return "Vendor [vendorId=" + vendorId + ", vendorName=" + vendorName + ", validFrom=" + validFrom + ", validTo="
-				+ validTo + ", address=" + address + ", vendortypeId=" + vendortypeId + ", assetTypeId=" + assetTypeId
-				+ ", vendorType=" + vendorType + ", assetType=" + assetType + "]";
+		return String.format(
+				"Vendor [vendorId=%s, vendorName=%s, validFrom=%s, validTo=%s, address=%s, vendortypeId=%s, assetTypeId=%s, vendorType=%s, assetType=%s, assetMaster=%s]",
+				vendorId, vendorName, validFrom, validTo, address, vendortypeId, assetTypeId, vendorType, assetType,
+				assetMaster);
 	}
-	
-	
-	
-	
+
 }
