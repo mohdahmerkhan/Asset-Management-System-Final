@@ -42,40 +42,40 @@ public class AssetController {
 		
 		
 	  	//get by assetID
-			@GetMapping("assets/{assetID}")
-			public Asset viewAsset(@PathVariable int assetID) 
-            {
-				return assetService.viewAsset(assetID);
-			}
+		@GetMapping("assets/{assetID}")
+		public Asset viewAsset(@PathVariable int assetID) 
+        {
+			return assetService.viewAsset(assetID);
+		}
 		
 		//get by assetTypeId
-			@GetMapping("assetType/{assetTypeId}")
-			public AssetType viewAssetType(@PathVariable int assetTypeId) 
-            {
-				return assetService.viewAssetType(assetTypeId);
-			}
+		@GetMapping("assetType/{assetTypeId}")
+		public AssetType viewAssetType(@PathVariable int assetTypeId) 
+        {
+			return assetService.viewAssetType(assetTypeId);
+		}
 		
 			
 		//add aaset
-			@PostMapping("assets")
-			public ResponseEntity<Asset> insertAsset(@RequestBody Asset asset){
-				System.out.println("Inserting a record");
-				return new ResponseEntity<Asset> (assetService.insertAsset(asset),HttpStatus.OK);
-			}
+		@PostMapping("assets")
+		public ResponseEntity<Asset> insertAsset(@RequestBody Asset asset){
+			System.out.println("Inserting a record");
+			return new ResponseEntity<Asset> (assetService.insertAsset(asset),HttpStatus.OK);
+		}
 		
 		//update asset
-			@PutMapping("assets")
-			public Asset updateAsset(@RequestBody Asset asset){
-				System.out.println("Updating a record");
-				assetService.updateAsset(asset);
-				return asset;
-			}
+		@PutMapping("assets")
+		public Asset updateAsset(@RequestBody Asset asset){
+			System.out.println("Updating a record");
+			assetService.updateAsset(asset);
+			return asset;
+		}
 			
-			//delete asset
-			@DeleteMapping("assets/{assetID}")
-			public void deleteAsset(@PathVariable int assetID) {
-				assetService.deleteAsset(assetID);;
-				}
+		//delete asset
+		@DeleteMapping("assets/{assetID}")
+		public void deleteAsset(@PathVariable int assetID) {
+			assetService.deleteAsset(assetID);;
+			}
 			
 			
 			

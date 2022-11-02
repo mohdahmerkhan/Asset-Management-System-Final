@@ -54,8 +54,7 @@ public class Vendor {
 	}
 
 	//Parameterized Constructor
-	public Vendor(int vendorId, String vendorName, Date validFrom, Date validTo, String address, int vendortypeId,
-			int assetTypeId, VendorType vendorType, AssetType assetType, List<AssetMaster> assetMaster) {
+	public Vendor(int vendorId, String vendorName, Date validFrom, Date validTo, String address, VendorType vendorType, AssetType assetType, List<AssetMaster> assetMaster) {
 
 		super();
 		this.vendorId = vendorId;
@@ -63,8 +62,6 @@ public class Vendor {
 		this.validFrom = validFrom;
 		this.validTo = validTo;
 		this.address = address;
-		this.vendortypeId = vendortypeId;
-		this.assetTypeId = assetTypeId;
 		this.vendorType = vendorType;
 		this.assetType = assetType;
 		this.assetMaster = assetMaster;
@@ -121,22 +118,6 @@ public class Vendor {
 		this.address = address;
 	}
 
-	public int getVendortypeId() {
-		return vendortypeId;
-	}
-
-	public void setVendortypeId(int vendortypeId) {
-		this.vendortypeId = vendortypeId;
-	}
-
-	public int getAssetTypeId() {
-		return assetTypeId;
-	}
-
-	public void setAssetTypeId(int assetTypeId) {
-		this.assetTypeId = assetTypeId;
-	}
-
 
 	public VendorType getVendorType() {
 		return vendorType;
@@ -157,8 +138,8 @@ public class Vendor {
 	@Override
 	public String toString() {
 		return String.format(
-				"Vendor [vendorId=%s, vendorName=%s, validFrom=%s, validTo=%s, address=%s, vendortypeId=%s, assetTypeId=%s, vendorType=%s, assetType=%s, assetMaster=%s]",
-				vendorId, vendorName, validFrom, validTo, address, vendortypeId, assetTypeId, vendorType, assetType,
+				"Vendor [vendorId=%s, vendorName=%s, validFrom=%s, validTo=%s, address=%s, vendorType=%s, assetType=%s, assetMaster=%s]",
+				vendorId, vendorName, validFrom, validTo, address, vendorType, assetType,
 				assetMaster);
 
 	}
