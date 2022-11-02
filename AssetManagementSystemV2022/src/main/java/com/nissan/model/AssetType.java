@@ -30,17 +30,16 @@ public class AssetType {
 	private List<Asset> assets;
 	
 
-//	@JsonIgnore
-//	@OneToMany(mappedBy="assetType")
-//	private List<Vendor> vendors;
-	
+	@JsonIgnore
+	@OneToMany(mappedBy="assetType")
+	private List<Vendor> vendors;
+
 	//default constructor
 	public AssetType() {
 		
 	}
 
-
-	//parameterized constructor
+	//parametrized constructor
 	public AssetType(int assetTypeId, String assetTypeName) {
 		super();
 		this.assetTypeId = assetTypeId;
@@ -72,14 +71,14 @@ public class AssetType {
 		this.assets = assets;
 	}
 	
-//
-//	public List<Vendor> getVendors() {
-//		return vendors;
-//	}
-//
-//	public void setVendors(List<Vendor> vendors) {
-//		this.vendors = vendors;
-//	}
+	public List<Vendor> getVendors() {
+		return vendors;
+	}
+
+	public void setVendors(List<Vendor> vendors) {
+		this.vendors = vendors;
+	}
+
   
 	//override toString
 	@Override

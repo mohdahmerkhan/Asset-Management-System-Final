@@ -50,7 +50,7 @@ public class VendorController {
 	
 	//View Vendor by vendorID
 	@GetMapping("vendors/{vendorId}")
-	public Optional<Vendor> findUserById(@PathVariable int vendorId){
+	public Optional<Vendor> findVendorById(@PathVariable int vendorId){
 		return vendorService.viewVendorById(vendorId);
 	}
 	
