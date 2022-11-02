@@ -8,6 +8,9 @@ public class AssetManagementSystemV2022Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AssetManagementSystemV2022Application.class, args);
+
+		System.out.println("Asset Management System REST Working Fine");
+
 	}
 
 }

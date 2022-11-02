@@ -29,6 +29,7 @@ public class AssetType {
 	@OneToMany(mappedBy="assetType")
 	private List<Asset> assets;
 	
+
 //	@JsonIgnore
 //	@OneToMany(mappedBy="assetType")
 //	private List<Vendor> vendors;
@@ -37,6 +38,7 @@ public class AssetType {
 	public AssetType() {
 		
 	}
+
 
 	//parameterized constructor
 	public AssetType(int assetTypeId, String assetTypeName) {
@@ -70,7 +72,6 @@ public class AssetType {
 		this.assets = assets;
 	}
 	
-	
 //
 //	public List<Vendor> getVendors() {
 //		return vendors;
@@ -79,12 +80,11 @@ public class AssetType {
 //	public void setVendors(List<Vendor> vendors) {
 //		this.vendors = vendors;
 //	}
-
+  
 	//override toString
 	@Override
 	public String toString() {
 		return "AssetType [assetTypeId=" + assetTypeId + ", assetTypeName=" + assetTypeName + ", assets=" + assets
 				+ "]";
 	}
-	
 }

@@ -13,19 +13,21 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Vendor")
+@Table(name="Vendor")
 public class Vendor {
 
-	// Fields
+	//Fields
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int vendorId;
+	
+	@Column(nullable=false)
 
-	@Column(nullable = false)
 	private String vendorName;
 	private Date validFrom;
 	private Date validTo;
 	private String address;
+
 //	private int vendortypeId;
 //	private int assetTypeId;
 
