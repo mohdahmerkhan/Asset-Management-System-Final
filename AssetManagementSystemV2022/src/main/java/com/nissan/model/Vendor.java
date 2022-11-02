@@ -1,9 +1,11 @@
 package com.nissan.model;
 
 import java.util.Date;
+
 import java.util.List;
 
 import javax.persistence.CascadeType;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,11 +13,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 
 @Entity
 @Table(name="Vendor")
@@ -31,9 +33,7 @@ public class Vendor {
 	private Date validFrom;
 	private Date validTo;
 	private String address;
-	private int vendortypeId;
-	private int assetTypeId;
-	
+
 	@JoinColumn(name ="vendortypeId" ,insertable=false,updatable=false)
 	@ManyToOne
 	private VendorType vendorType;
@@ -56,6 +56,7 @@ public class Vendor {
 	//Parameterized Constructor
 	public Vendor(int vendorId, String vendorName, Date validFrom, Date validTo, String address, int vendortypeId,
 			int assetTypeId, VendorType vendorType, AssetType assetType, List<AssetMaster> assetMaster) {
+
 		super();
 		this.vendorId = vendorId;
 		this.vendorName = vendorName;
@@ -77,6 +78,7 @@ public class Vendor {
 
 	public void setAssetMaster(List<AssetMaster> assetMaster) {
 		this.assetMaster = assetMaster;
+
 	}
 
 	public int getVendorId() {
@@ -135,6 +137,7 @@ public class Vendor {
 		this.assetTypeId = assetTypeId;
 	}
 
+
 	public VendorType getVendorType() {
 		return vendorType;
 	}
@@ -157,6 +160,7 @@ public class Vendor {
 				"Vendor [vendorId=%s, vendorName=%s, validFrom=%s, validTo=%s, address=%s, vendortypeId=%s, assetTypeId=%s, vendorType=%s, assetType=%s, assetMaster=%s]",
 				vendorId, vendorName, validFrom, validTo, address, vendortypeId, assetTypeId, vendorType, assetType,
 				assetMaster);
+
 	}
 
 }

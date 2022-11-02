@@ -1,0 +1,33 @@
+AssetManagementSystemV2022
+
+Step 1 : Create Spring Boot Application
+
+        main
+            com.nissan
+            com.nissan.config
+            com.nissan.model
+                Login
+                UserRegister
+                UserType
+                Asset
+                AssetType
+                Vendor
+                VendorType
+                PurchaseOrder
+                Status
+                MasterTable
+            com.nissan.repo
+            com.nissan.rest
+            com.nissan.service
+                IUserService
+                IAssetService
+                IVendroService
+                IPurchaseService
+                IMasterService
+                UserServiceImpl
+                AssetServiceImpl
+                VendorServiceImpl
+                PurchaseService
+                MasterServiceImpl
+
+

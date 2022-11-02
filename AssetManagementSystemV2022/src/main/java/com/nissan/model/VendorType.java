@@ -70,10 +70,5 @@ public class VendorType {
 	public String toString() {
 		return "VendorType [vendortypeId=" + vendortypeId + ", vendortypeName=" + vendortypeName + ", vendors="
 				+ vendors + "]";
-	}
-	
-	
-	
-	
-	
+  }
 }
