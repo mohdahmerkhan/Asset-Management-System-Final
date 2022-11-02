@@ -4,13 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AssetManagementSystemV2022Application {
+public class AssetManagementSystemv2022Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AssetManagementSystemV2022Application.class, args);
-
-		System.out.println("Asset Management System REST Working Fine");
-
+		SpringApplication.run(AssetManagementSystemv2022Application.class, args);
+		System.out.println("welcome to Asset Management System");
 	}
 
 }

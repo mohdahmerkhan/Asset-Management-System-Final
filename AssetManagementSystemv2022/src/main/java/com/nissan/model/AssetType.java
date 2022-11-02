@@ -29,22 +29,17 @@ public class AssetType {
 	@OneToMany(mappedBy="assetType")
 	private List<Asset> assets;
 	
-
-//	@JsonIgnore
-//	@OneToMany(mappedBy="assetType")
-//	private List<Vendor> vendors;
-	
 	//default constructor
 	public AssetType() {
 		
 	}
 
-
-	//parameterized constructor
-	public AssetType(int assetTypeId, String assetTypeName) {
+	//parametrized constructor
+	public AssetType(int assetTypeId, String assetTypeName, List<Asset> assets) {
 		super();
 		this.assetTypeId = assetTypeId;
 		this.assetTypeName = assetTypeName;
+		this.assets = assets;
 	}
 
 	//getters and setters
@@ -71,20 +66,16 @@ public class AssetType {
 	public void setAssets(List<Asset> assets) {
 		this.assets = assets;
 	}
-	
-//
-//	public List<Vendor> getVendors() {
-//		return vendors;
-//	}
-//
-//	public void setVendors(List<Vendor> vendors) {
-//		this.vendors = vendors;
-//	}
-  
+
 	//override toString
 	@Override
 	public String toString() {
 		return "AssetType [assetTypeId=" + assetTypeId + ", assetTypeName=" + assetTypeName + ", assets=" + assets
 				+ "]";
 	}
+	
+	
+		
+		
+
 }

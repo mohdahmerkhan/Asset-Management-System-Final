@@ -1,0 +1,153 @@
+    Users
+        Admin
+        Purchase Manager
+
+Admin Actions
+    insertAsset
+    (
+        {
+            assetTypeID     (Select Input)
+            assetName       (Text Input)
+            class           (Radio Input)
+        }
+    )
+    updateAsset
+    (
+        {
+            assetID         (Hidden Input)
+            assetTypeID     (Select Input)
+            assetName       (Text Input)
+            class           (Radio Input)
+        }
+    )
+    deleteAsset(assetID)
+    viewAllAssets()
+    viewAssets(assetID)
+
+    insertVendor
+    (
+        {
+            vendorName          (Text Input)
+            vendorTypeID        (Select Input)
+            assetTypeID         (Select Input)
+            validFrom           (Date Input)
+            validTo             (Date Input)
+            vendorAddress       (TextArea Input)
+        }
+    )
+    updateVendor
+    (
+        {
+            vendorID            (Hidden Input)
+            vendorName          (Text Input)
+            vendorTypeID        (Select Input)
+            assetTypeID         (Select Input)
+            validFrom           (Date Input)
+            validTo             (Date Input)
+            vendorAddress       (TextArea Input)
+        }
+    )
+    deleteVendor(vendorID)
+
+    viewAllVendors()
+    viewVendor(vendorID)
+
+    disableUser(userID)
+    enableUser(userID)
+
+    login
+    (
+        {
+            userName    (Text Input)
+            password    (Password Input)
+            userType    (Select Input)     
+        }
+    )
+    signup
+    (
+        {
+            firstName   (Text Input)
+            lastName    (Text Input)
+            age         (Number Input)
+            gender      (Radio Input)
+            Address     (TextArea Input)
+            phoneNo     (Tel Input)    
+            userName    (Text Input)
+            password    (Password Input)
+            userType    (Select Input)
+        }
+    )
+
+    viewAllPurchaseOrders()
+    viewPurchaseOrder(purchaseOrderID)
+
+
+    viewAllRecordInMasterTable()
+    viewRecordInMasterTable(masterTableID)
+
+    insertRecordInMasterTable
+    (
+        {
+            assetTypeID         (Select Input)
+            vendorID            (Select Input)
+            assetID             (Select Input)
+            model               (Text Input)
+            serialNumber        (Number Input)
+            manufacturingYear   (Number Input)
+            warranty            (Radio Input)
+            fromDate            (Date Input)
+            toDate              (Date Input)
+        }
+    )
+    
+    updateRecordInMasterTable
+    (
+        {
+            masterTableID       (Hidden Input)
+            assetTypeID         (Select Input)
+            vendorID            (Select Input)
+            assetID             (Select Input)
+            model               (Text Input)
+            serialNumber        (Number Input)
+            manufacturingYear   (Number Input)
+            warranty            (Radio Input)
+            fromDate            (Date Input)
+            toDate              (Date Input)
+        }
+    )
+
+Purchase Manager Actions
+
+    login()         --Same as Above
+    signup()        --Same as Above
+
+    viewAllPurchaseOrders()
+    viewPurchaseOrder(purchaseOrderID)
+
+    insertPurchaseOrder
+    (
+        {
+            assetID             (Select Input)                       
+            assetTypeID         (Select Input)
+            quantity            (Number Input)
+            vendorID            (Select Input)
+            orderDate           (Date Input)
+            deliveryDate        (Date Input)
+            statusID            (Select Input)   
+        }
+    )
+    updatePurchaseOrder
+    (
+        {
+            purchaseOrderID     (Hidden Input)
+            assetID             (Select Input)                       
+            assetTypeID         (Select Input)
+            quantity            (Number Input)
+            vendorID            (Select Input)
+            orderDate           (Date Input)
+            deliveryDate        (Date Input)
+            statusID            (Select Input)   
+        }
+    )
+    
+    deletePurchaseOrder(purchaseOrderID)

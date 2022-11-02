@@ -22,13 +22,13 @@ public class Asset {
 	private String assetName;
 	
 	private boolean ishardware;
-  
-//	private int assetTypeId;
+	
+	private int assetTypeId;
 	
 	@JoinColumn(name="assetTypeId",insertable=false,updatable=false)   
 	@ManyToOne
 	private AssetType assetType;
-
+	
     //default constructor
 	public Asset() {
 		
@@ -40,7 +40,7 @@ public class Asset {
 		this.assetID = assetID;
 		this.assetName = assetName;
 		this.ishardware = ishardware;
-//		this.assetTypeId = assetTypeId;
+		this.assetTypeId = assetTypeId;
 		this.assetType = assetType;
 	}
 
@@ -69,14 +69,13 @@ public class Asset {
 		this.ishardware = ishardware;
 	}
 
+	public int getAssetTypeId() {
+		return assetTypeId;
+	}
 
-//	public int getAssetTypeId() {
-//		return assetTypeId;
-//	}
-//
-//	public void setAssetTypeId(int assetTypeId) {
-//		this.assetTypeId = assetTypeId;
-//	}
+	public void setAssetTypeId(int assetTypeId) {
+		this.assetTypeId = assetTypeId;
+	}
 
 	public AssetType getAssetType() {
 		return assetType;
@@ -90,6 +89,9 @@ public class Asset {
 	@Override
 	public String toString() {
 		return "Asset [assetID=" + assetID + ", assetName=" + assetName + ", ishardware=" + ishardware
-				+ ", assetType=" + assetType + "]";
+				+ ", assetTypeId=" + assetTypeId + ", assetType=" + assetType + "]";
 	}
+	
+	
+	
 }
